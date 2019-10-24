@@ -2,7 +2,7 @@
 //-------------------calls the coffee to the screen-------------------
 function renderCoffee(coffee) {
     var html = '<div class="coffee">';
-    html += '<div>' + "<h1>" + coffee.name + "</h1>" + coffee.roast +'</div>';
+    html += '<div class="genDiv">' + "<h1>" + coffee.name + "&emsp;" + "</h1>" + coffee.roast +  '</div>';
     html += '</div>';
 
     return html;

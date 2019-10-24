@@ -3,16 +3,42 @@
 }
 body {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: 40px repeat(5, 1fr);
     grid-template-areas:
         "jumbo jumbo jumbo jumbo jumbo jumbo"
-        "coffee coffee coffee form form form"
-        "coffee coffee coffee form form form"
-        "coffee coffee coffee form form form";
+        ". coffee coffee form form form"
+        ". coffee coffee form form form"
+        ". coffee coffee form form form";
+
 }
 
 .jumbotron{
     grid-area: jumbo;
+    background-image: url("img/coffee.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 30%;
+    background-position: center;
+    /*max-width: 100%;*/
+    /*max-height: auto;*/
+}
+.coffee-container{
+    grid-area: coffee;
+    /*background-image: url("img/coffeecup.jpg");*/
+    background-repeat: no-repeat;
+    overflow: visible;
+    height: 612px;
+    margin-right: 10px;
+
+}
+.container{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.container h1 {
+    color: beige;
+
 }
 
 .form {
@@ -20,18 +46,14 @@ body {
 }
 
 .table {
-    grid-area: coffee;
+
     display: flex;
     flex-flow: row wrap;
 }
-
-table {
-    border-collapse: collapse;
-    margin: 15px 0;
+.genDiv{
+    width: 270px;
 }
 
-td, th {
-    padding: 5px 10px;
-}
+
 
 
