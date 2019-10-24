@@ -2,18 +2,17 @@
 //-------------------calls the coffee to the screen-------------------
 function renderCoffee(coffee) {
     var html = '<div class="coffee">';
-    html += '<div>' + coffee.name + '</div>';
-    html += '<div>' + coffee.roast + '</div>';
+    html += '<div>' + "<h1>" + coffee.name + "</h1>" + coffee.roast +'</div>';
     html += '</div>';
 
     return html;
 }
 
 //--------------prints the coffee--------------------------
-function renderCoffees(coffees) {
+function renderCoffees(coffeesReversed) {
     var html = '';
-    for(var i = coffees.length - 1; i >= 0; i--) {
-        html += renderCoffee(coffees[i]);
+    for(var i = coffeesReversed.length - 1; i >= 0; i--) {
+        html += renderCoffee(coffeesReversed[i]);
     }
     return html;
 }
@@ -30,7 +29,22 @@ function updateCoffees(e) {
     });
     div.innerHTML = renderCoffees(filteredCoffees);
 }
+//-------------- coffee search --------------------------
+function searchCoffees() {
+    var input, filter, div, txtValue;
+    input = document.getElementById("name-selection");
+    filter = input.value;
+    div = document.getElementById("coffees");
 
+    for (var i = 0; i < coffees.length; i++){
+        txtValue = coffees.name;
+        if(txtValue.indexOf(filter) > -1){
+            coffees.name.style.display = "";
+        } else {
+            coffees.name.style.display = "none";
+        }
+    }
+}
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 var coffees = [
     {id: 1, name: 'Light City', roast: 'light'},
@@ -49,10 +63,12 @@ var coffees = [
     {id: 14, name: 'French', roast: 'dark'},
 ];
 
+var coffeesReversed = coffees.reverse();
+
 var div = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
 
-div.innerHTML = renderCoffees(coffees);
+div.innerHTML = renderCoffees(coffeesReversed);
 
 submitButton.addEventListener('click', updateCoffees);
