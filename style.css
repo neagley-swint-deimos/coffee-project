@@ -1,9 +1,37 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas:
+        "jumbo jumbo jumbo jumbo jumbo jumbo"
+        "coffee coffee coffee form form form"
+        "coffee coffee coffee form form form"
+        "coffee coffee coffee form form form";
+}
+
+.jumbotron{
+    grid-area: jumbo;
+}
+
+.form {
+    grid-area: form;
+}
+
+.table {
+    grid-area: coffee;
+    display: flex;
+    flex-flow: row wrap;
+}
+
 table {
     border-collapse: collapse;
     margin: 15px 0;
 }
 
 td, th {
-    border: 1px solid black;
     padding: 5px 10px;
 }
+
+
