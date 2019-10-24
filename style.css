@@ -2,36 +2,34 @@
     box-sizing: border-box;
 }
 body {
+    background-image: url(img/coffee-bg2.jpeg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
     display: grid;
     grid-template-columns: 40px repeat(5, 1fr);
     grid-template-areas:
         "jumbo jumbo jumbo jumbo jumbo jumbo"
-        ". coffee coffee form form form"
-        ". coffee coffee form form form"
-        ". coffee coffee form form form";
-
+        ". coffee coffee . form form"
+        ". coffee coffee . form form"
+        ". coffee coffee . form form";
 }
 
 .jumbotron{
     grid-area: jumbo;
-    background-image: url("img/coffee.jpeg");
+    background-image: url("img/coffee-try-3.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
-    width: 100%;
-    height: 30%;
+    height: 300px !important;
     background-position: center;
-    /*max-width: 100%;*/
-    /*max-height: auto;*/
 }
+
 .coffee-container{
     grid-area: coffee;
-    /*background-image: url("img/coffeecup.jpg");*/
-    background-repeat: no-repeat;
-    overflow: visible;
-    height: 612px;
-    margin-right: 10px;
 
+    height: 80vh;
+    margin-right: 10px;
 }
+
 .container{
     display: flex;
     flex-direction: row-reverse;
