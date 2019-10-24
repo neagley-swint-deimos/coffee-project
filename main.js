@@ -24,22 +24,13 @@ function updateCoffees(e) {
     var filteredCoffees = [];
     var userInput = document.getElementById("nameSelection").value;
     coffees.forEach(function(coffee) {
-        if (coffee.roast === selectedRoast && coffee.name.toLowerCase().includes(userInput)) {
+        if ((coffee.roast === selectedRoast || selectedRoast === "all")&& coffee.name.toLowerCase().includes(userInput)) {
             filteredCoffees.push(coffee);
         }
     });
     div.innerHTML = renderCoffees(filteredCoffees);
 }
-//-------------- coffee search --------------------------
-// function searchCoffees() {
-//     var input = document.getElementById('name-selection');
-//    for (var i = 0; i < coffees.length; i++) {
-//        if (input.value.includes(coffees[i].name)) {
-//            coffees[i].name.style.display = "";
-//        } else
-//            coffees[i].name.style.display = "none";
-//    }
-// }
+
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 var coffees = [
     {id: 1, name: 'Light City', roast: 'light'},
