@@ -22,29 +22,24 @@ function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedRoast = roastSelection.value;
     var filteredCoffees = [];
+    var userInput = document.getElementById("nameSelection").value;
     coffees.forEach(function(coffee) {
-        if (coffee.roast === selectedRoast) {
+        if (coffee.roast === selectedRoast && coffee.name.toLowerCase().includes(userInput)) {
             filteredCoffees.push(coffee);
         }
     });
     div.innerHTML = renderCoffees(filteredCoffees);
 }
 //-------------- coffee search --------------------------
-function searchCoffees() {
-    var input, filter, div, txtValue;
-    input = document.getElementById("name-selection");
-    filter = input.value;
-    div = document.getElementById("coffees");
-
-    for (var i = 0; i < coffees.length; i++){
-        txtValue = coffees.name;
-        if(txtValue.indexOf(filter) > -1){
-            coffees.name.style.display = "";
-        } else {
-            coffees.name.style.display = "none";
-        }
-    }
-}
+// function searchCoffees() {
+//     var input = document.getElementById('name-selection');
+//    for (var i = 0; i < coffees.length; i++) {
+//        if (input.value.includes(coffees[i].name)) {
+//            coffees[i].name.style.display = "";
+//        } else
+//            coffees[i].name.style.display = "none";
+//    }
+// }
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 var coffees = [
     {id: 1, name: 'Light City', roast: 'light'},
@@ -68,7 +63,11 @@ var coffeesReversed = coffees.reverse();
 var div = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
+var inputField = document.querySelector("#nameSelection");
 
 div.innerHTML = renderCoffees(coffeesReversed);
 
 submitButton.addEventListener('click', updateCoffees);
+inputField.addEventListener('input', updateCoffees);
+
+
