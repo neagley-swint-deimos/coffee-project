@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-
-</head>
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Marck+Script|Merienda&display=swap" rel="stylesheet"></head>
 <body>
 
 <div class="jumbotron img-fluid ">
@@ -16,9 +15,11 @@
     </div>
 </div>
 
+<div class="form">
+    <form >
+        <fieldset>
+            <legend><span class="number">1</span>Choose from our amazing selection:</legend>
 
-    <form class="form">
-        <h4>Choose from our amazing selection:</h4>
         <label for="roast-selection">Select Roast</label>
         <select id="roast-selection">
             <option selected>all</option>
@@ -29,19 +30,27 @@
         <label for="nameSelection">Coffee Name</label>
         <input type="text" id="nameSelection">
         <input id="submit" type="submit" />
+
+        </fieldset>
     </form>
-<form class="form2">
-    <h4>Create your own coffee:</h4>
-    <label for="roast-create">Select Roast</label>
-    <select id="roast-create">
-        <option>light</option>
-        <option>medium</option>
-        <option>dark</option>
-    </select> <br>
-    <label for="nameSelection">Make Your Own</label>
-    <input type="text" id="create">
-    <input id="makeIt" type="submit" />
-</form>
+
+        <form class="">
+            <fieldset>
+                <legend><span class="number">2</span>Create your own coffee:</legend>
+
+            <label for="roast-create">Select Roast</label>
+            <select id="roast-create">
+                <option>light</option>
+                <option>medium</option>
+                <option>dark</option>
+            </select> <br>
+            <label for="nameSelection">Make Your Own</label>
+            <input type="text" id="create">
+            <input id="makeIt" type="submit" />
+            </fieldset>
+        </form>
+
+</div>
 
 <div class="coffee-container">
     <div class="table" id="coffees">
