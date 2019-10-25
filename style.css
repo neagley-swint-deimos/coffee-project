@@ -2,8 +2,9 @@
     box-sizing: border-box;
 }
 body {
-    background-image: url("img/coffee-bg2.jpeg");
+    background-image: url("img/coffee-bg.jpeg");
     background-size: 100% 100%;
+    background-position: center;
     background-repeat: no-repeat;
     display: grid;
     grid-template-columns: 40px repeat(4, 1fr) 40px;
@@ -13,6 +14,8 @@ body {
         ". coffee coffee . form ."
         ". coffee coffee . . .";
 }
+
+
 .display-4{
     font-family: 'Merienda', cursive;}
 
@@ -42,7 +45,6 @@ body {
 
 .form {
     grid-area: form;
-    /*color: beige;*/
 }
 
 .form2 {

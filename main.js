@@ -39,9 +39,14 @@ function createCoffee (e) {
     creation.roast = document.getElementById("roast-create").value;
     coffees.push(creation);
     div.innerHTML = renderCoffee(creation);
+    localStorage.setItem("coffee", JSON.stringify(coffees));
 }
 
+
+
+
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
+if (localStorage.length === 0) {
 var coffees = [
     {id: 1, name: 'Light City', roast: 'light'},
     {id: 2, name: 'Half City', roast: 'light'},
@@ -57,7 +62,11 @@ var coffees = [
     {id: 12, name: 'Viennese', roast: 'dark'},
     {id: 13, name: 'Italian', roast: 'dark'},
     {id: 14, name: 'French', roast: 'dark'},
-];
+]; } else {
+    coffees = JSON.parse(localStorage.getItem("coffee"));
+}
+
+
 
 var coffeesReversed = coffees.reverse();
 
