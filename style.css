@@ -2,10 +2,7 @@
     box-sizing: border-box;
 }
 body {
-    background-image: url("img/coffee-bg.jpeg");
-    background-size: 100% 100%;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-color: #C79978 !important;
     display: grid;
     grid-template-columns: 40px repeat(4, 1fr) 40px;
     grid-template-areas:
@@ -21,7 +18,7 @@ body {
 
 .jumbotron{
     grid-area: jumbo;
-    background-image: url("img/coffee-try-3.jpeg");
+    background-image: url("img/jumbo-bg.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh !important;
