@@ -2,7 +2,7 @@
 //-------------------calls the coffee to the screen-------------------
 function renderCoffee(coffee) {
     var html = '<div class="coffee">';
-    html += '<div class="genDiv">' + "<h3>" + coffee.name + "&emsp;" + "</h3>" + coffee.roast +  '</div>';
+    html += '<div class="genDiv">' + "<h3>" + coffee.name + "</h3>" + coffee.roast +  '</div>';
     html += '</div>';
 
     return html;
@@ -30,6 +30,16 @@ function updateCoffees(e) {
     });
     div.innerHTML = renderCoffees(filteredCoffees);
 }
+function createCoffee (e) {
+    var creation = {};
+    e.preventDefault();
+    console.log("create coffee button clicked");
+
+    creation.name = document.getElementById("create").value;
+    creation.roast = document.getElementById("roast-create").value;
+    coffees.push(creation);
+    div.innerHTML = renderCoffee(creation);
+}
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 var coffees = [
@@ -53,6 +63,7 @@ var coffeesReversed = coffees.reverse();
 
 var div = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
+var makeItButton = document.querySelector('#makeIt');
 var roastSelection = document.querySelector('#roast-selection');
 var inputField = document.querySelector("#nameSelection");
 
@@ -60,5 +71,7 @@ div.innerHTML = renderCoffees(coffeesReversed);
 
 submitButton.addEventListener('click', updateCoffees);
 inputField.addEventListener('input', updateCoffees);
+makeItButton.addEventListener('click', createCoffee);
+
 
 
